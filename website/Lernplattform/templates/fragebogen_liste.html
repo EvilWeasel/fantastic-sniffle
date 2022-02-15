@@ -2,7 +2,8 @@
 {% load static %}
 {% block title %}Fragebogen{% endblock title %}
 {% block link %}
-<link rel="stylesheet" href="{% static  'styles/styles.css'%}">
+<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+<script src="{% static 'script/fragebogen_liste.js' %}"></script>
 {% endblock link %}
 
 
@@ -14,10 +15,12 @@
     {% for fragebogen in bogen %}
 
     <div class="card text-white bg-dark">
-      <img class="card-img-top" src="holder.js/100px180/" alt="">
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
+        <h4 class="card-title">{{ fragebogen.fragebogen_name }}</h4>
+        <p class="card-text">{{ fragebogen.katalog }}</p>
+        <a href="{% url 'Lernplattform:fragebogenDetails' fragebogen.id%}">
+          <h1>GEILO</h1>
+        </a>
       </div>
     </div>
     
@@ -26,6 +29,14 @@
 
 
 </div>
-
+<script>
+  let btns = document.getElementsByClassName("card-btn")
+  
+  Array.from(btns).forEach(x => x.addEventListener("click", function(){
+    var id = this.id;
+    var url = this.getAttribute("href");
+    window.location.href = url;
+  }));
+</script>
 
 {% endblock content %}

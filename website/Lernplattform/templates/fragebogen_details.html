@@ -1,0 +1,28 @@
+{% extends 'mainTemplate.html' %}
+{% load static %}
+{% block title %}Fragebogen{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+<script src="{% static 'script/fragebogen_liste.js' %}"></script>
+{% endblock link %}
+
+
+{% block content %}
+
+<div class="container">
+
+<div class="card text-white bg-dark">
+      <div class="card-body">
+        <h4 class="card-title">{{ bogen.fragebogen_name }}</h4>
+        <p class="card-text">{{ bogen.katalog }}</p>
+        <button id="{{ bogen.id }}" class="btn-primary" href="{% url 'Lernplattform:fragebogenDetails' fragebogen.id %}" onclick="window.location.href={% url 'fragebogenDetails' fragebogen.id %}" type="button">Details</button>
+      </div>
+    </div>
+    
+
+
+
+</div>
+
+
+{% endblock content %}

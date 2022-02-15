@@ -24,5 +24,7 @@ app_name = 'Lernplattform'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('/fragebogen', views.fragebogen, name='fragebogen'),
+    path('fragebogen/', views.fragebogen, name='fragebogen'),
+    path('details/<int:pk>/',
+         views.fragebogenDetails, name='fragebogenDetails'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

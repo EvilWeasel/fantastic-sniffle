@@ -1,3 +1,4 @@
+from queue import Empty
 from django.shortcuts import render
 
 from .models import Fragebogen
@@ -12,3 +13,8 @@ def index(request):
 def fragebogen(request):
     bogen = Fragebogen.objects.all()
     return render(request, 'fragebogen_liste.html', {'bogen': bogen})
+
+
+def fragebogenDetails(request, pk):
+    bogen = Fragebogen.objects.get(id=pk)
+    return render(request, 'fragebogen_details.html', {'bogen': bogen})
