@@ -3,6 +3,7 @@
 *.id_ecdsa
 *.id_rsa
 .venv
+.vscode
 
 
 ## Ignore Visual Studio temporary files, build results, and
