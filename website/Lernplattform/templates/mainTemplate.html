@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+                    <a class="nav-link" href="{% url 'Lernplattform:index' %}">Home <span class="visually-hidden">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Lernplattform:fragebogen' %}">Fragebogen</a>
@@ -34,7 +34,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="#">Details</a>
-                        <a class="dropdown-item" href="#">Abmelden</a>
+                        <a class="dropdown-item" href="{% url 'Lernplattform:login' %}">Anmelden</a>
                     </div>
                 </li>
             </ul>

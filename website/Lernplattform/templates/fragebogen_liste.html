@@ -18,7 +18,7 @@
       <div class="card-body">
         <h4 class="card-title">{{ fragebogen.fragebogen_name }}</h4>
         <p class="card-text">{{ fragebogen.katalog }}</p>
-        <a href="{% url 'Lernplattform:fragebogenDetails' fragebogen.id%}">
+        <a href="{% url 'Lernplattform:fragebogenDetails' fragebogen.pk%}">
           <h1>GEILO</h1>
         </a>
       </div>

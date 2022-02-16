@@ -82,6 +82,10 @@ DATABASES = {
     }
 }
 
+# Overriding default user model
+# https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#auth-custom-user
+
+# AUTH_USER_MODEL = 'Lernplattform.Teilnehmer'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

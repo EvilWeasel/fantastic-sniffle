@@ -19,5 +19,6 @@ from Lernplattform import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('', include('Lernplattform.urls'), name='Lernplattform'),
+    path('', include('Lernplattform.urls')),
+    path('Lernplattform/', include(('Lernplattform.urls', 'Lernplattform'), namespace='Lernplattform')),
 ]

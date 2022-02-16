@@ -14,15 +14,30 @@
 <div class="card text-white bg-dark">
       <div class="card-body">
         <h4 class="card-title">{{ bogen.fragebogen_name }}</h4>
-        <p class="card-text">{{ bogen.katalog }}</p>
-        <button id="{{ bogen.id }}" class="btn-primary" href="{% url 'Lernplattform:fragebogenDetails' fragebogen.id %}" onclick="window.location.href={% url 'fragebogenDetails' fragebogen.id %}" type="button">Details</button>
+        <p class="card-text">{{ bogen.katalog }}</p>  
       </div>
     </div>
+
+    {% for frage in bogen.fragen.all %}
+    <div class="card text-black bg-light">
+      <div class="card-body">
+        <h4 class="card-title">{{ frage }}</h4>
+      </a>
+    </div>
+    {% endfor %}
     
-
-
-
-</div>
-
-
-{% endblock content %}
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+  {% endblock content %}
+  
+  
+  
+  <!-- <button id="{{ bogen.id }}" class="btn-primary" href="{% url 'Lernplattform:fragebogenDetails' fragebogen.id %}" onclick=window.location.href="{% url 'fragebogenDetails' fragebogen.id %}" type="button">Details</button> -->
