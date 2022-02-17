@@ -1,7 +1,7 @@
 from queue import Empty
 from django.shortcuts import render
-
 from .models import Fragebogen
+
 
 # Create your views here.
 
@@ -9,7 +9,10 @@ from .models import Fragebogen
 def index(request):
     return render(request, 'index.html')
 
+def login(request):
+    return render(request, 'login.html')
 
+    
 def fragebogen(request):
     bogen = Fragebogen.objects.all()
     return render(request, 'fragebogen_liste.html', {'bogen': bogen})

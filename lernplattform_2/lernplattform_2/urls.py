@@ -1,4 +1,4 @@
-"""website URL Configuration
+"""lernplattform_2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Lernplattform import urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin'),
-    path('', include('Lernplattform.urls')),
-    path('Lernplattform/', include(('Lernplattform.urls', 'Lernplattform'), namespace='Lernplattform')),
+    path('admin/', admin.site.urls),
+    path('', include('fragebogen.urls')),
 ]

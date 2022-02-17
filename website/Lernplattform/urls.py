@@ -18,13 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+import django.contrib.auth.views
 from . import views
 
 app_name = 'Lernplattform'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('login/', views.login, name='login'),
+    # path('login/', django.contrib.auth.views.LoginView.as_view(), {'template_name' : 'login.html'}, name='login'),
     path('fragebogen/', views.fragebogen, name='fragebogen'),
-    path('details/<int:pk>/',
+    path('fragebogen/details/<int:pk>',
          views.fragebogenDetails, name='fragebogenDetails'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
